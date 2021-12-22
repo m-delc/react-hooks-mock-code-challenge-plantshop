@@ -1,29 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "./Header";
 import PlantPage from "./PlantPage";
-// ReactDOM.render
+
 
 function App() {
 
-  const [plants, setPlants] = useState("plants")
-
-  useEffect(() => {
-    fetch('http://localhost:6001/plants')
-    .then(r => r.json())
-    .then(data => setPlants(data))
-      
-  }, [])
 
 
   return (
     <div className="app">
       <Header />
-      <PlantPage plants={plants} />
+      <PlantPage />
     </div>
   );
 }
 
 export default App;
+
+// 1- When the app starts, I can see all plants.
+// 2- I can add a new plant to the page by submitting the form.
+// 3- I can mark a plant as "sold out".
+// 4- I can search for plants by their name and see a filtered list of plants.
 
 
 
